@@ -173,9 +173,26 @@ header li a:hover {
     text-align: center;
     border-radius: 3px;
 }
-/*-----------------
-  01. c. Menu Mobile 
-  ----------------*/
+/*------------------
+  01. c. Menu Mobile */
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(0 0 0 / 50%);
+    pointer-events: none;
+    z-index: 15px;
+    transition: .5s ease;
+    opacity: 0;
+}
+.overlay.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
 nav.mobile {
     position: fixed;
     top: 0;
@@ -184,10 +201,18 @@ nav.mobile {
     height: 100%;
     max-width: calc(100vw - 60px);
     padding: 30px;
-    background-color: var(--light-color);
+    background-color: var(--white-color);
     z-index: 1000;
     display: flex;
     flex-direction: column;
+    
+    left: -100%;
+    visibility: hidden;
+    transition: .5s ease;
+}
+nav.mobile.active {
+    left: 0;
+    visibility: visible;
 }
 nav.mobile > ul > li {
     position: relative;
@@ -198,8 +223,117 @@ nav.mobile > ul > li > a {
     padding: 13px 0;
 }
 
-
-
+nav.mobile .enter {
+    padding-top: 20px;
+    margin-top: auto;
+}
+nav.mobile .enter div {
+    max-width: 170px;
+    margin: auto;
+    text-align: center;
+    font-size: 12px;
+    padding-bottom: 10px;
+    position: relative;
+    text-transform: uppercase;
+}
+nav.mobile .enter div::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 1px;
+    width: 100%;
+    background-color: var(--light-color);
+}
+nav.mobile .enter div span {
+    position: relative;
+    padding: 5px 20px;
+    color: var(--grey-color);
+    background-color: var(--white-color);
+}
+.btn-primary, .btn-light {
+    display: inline-flex;
+    font-size: 14px;
+    font-weight: 700;
+    border-radius: 60px;
+    padding: 0 32px;
+    line-height: 42px;
+    transition: background-color .3s, color .3s;
+}
+.btn-primary {
+    background-color: var(--dark-color);
+    color: var(--white-color);
+    border: 1px solid transparent;
+}
+.btn-primary:hover {
+    background-color: transparent;
+    color: var(--dark-color);
+    border-color: var(--dark-color);
+}
+.btn-light {
+    background-color: var(--white-color);
+}
+.btn-light:hover {
+    background-color: var(--dark-color);
+    color: var(--white-color);
+}
+nav.mobile .enter a {
+    display: block;
+    text-align: center;
+}
+nav.mobile .btn-light {
+    border: 1px solid var(--dark-color);
+    margin-top: 8px;
+}
+.close-trigger {
+    font-size: 30px;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    transition: color .3s;
+}
+.close-trigger:hover {
+    color: var(--primary-color);
+}
+nav.mobile .close-trigger {
+    position: absolute;
+    right: -40px;
+    top: 0;
+    color: var(--white-color);
+}
+nav.mobile > ul {
+    overflow-y: auto;
+    margin-bottom: 30px;
+}
+nav.mobile > ul > li > span {
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 55px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: color .3s;
+}
+nav.mobile > ul > li > span:hover {
+    color: var(--grey-color);
+}
+nav.mobile .submenu {
+    height: 0;
+    overflow: hidden;
+}
+nav.mobile .submenu a {
+    color: #7f7f7f;
+    padding-left: 15px;
+    transition: color .3s;
+}
+nav.mobile .submenu a:hover {
+    color: var(--dark-color);
+}
 
 /*----------------
   02. MAIN
