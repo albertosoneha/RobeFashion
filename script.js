@@ -17,3 +17,14 @@ for (let i = 0; i < menuTrigger.length; i++) {
     closeTrigger[i].addEventListener('click', closeMenu);
     overlay.addEventListener('click', closeMenu)
 }
+//mobile submenu
+const submenu = document.querySelectorAll('.sub-trigger');
+    submenu.forEach((menu) => menu.addEventListener('click', toggle));
+
+    function toggle() {
+        submenu.forEach((item) => item != this ? item.classList.remove('expand') : null);
+         
+        if (this.classList != 'expand') {
+            this.classList.toggle('expand')
+        }
+    }
