@@ -355,6 +355,13 @@ nav.mobile .expand ~ .submenu {
     padding: 30px 0;
     background-color: var(--white-color);
     z-index: 999;
+
+    opacity: 0;
+    visibility: hidden;
+}
+.search-modal.active {
+    opacity: 1;
+    visibility: visible;
 }
 .search-modal .wrap {
     max-width: 640px;
@@ -425,8 +432,15 @@ form.search i {
 /*----------------
   02. a. Hero   */
 
-
-
+.hero .wrap {
+    display: grid;
+}
+.hero .big {
+    height: 335px;
+}
+.hero .list:not(.big) {
+    height: 230px;
+}
 
 
 /*-----------------
@@ -527,7 +541,31 @@ form.search i {
 }
 
 
+.hero .wrap .list {
+    position: relative;
+    overflow: hidden;
+}
 
+
+@media only screen and (max-width: 576px) {
+    .header-main .icons :where(li:nth-child(2), li:nth-child(3)) {
+        display: none;
+    }
+    .hero .wrap {
+        gap: 15px;
+    }
+}
+
+
+@media (min-width: 576px) and (max-width: 767px) {
+    .hero .wrap {
+        grid-template-columns: 1fr 1fr;
+    }
+    .hero .big {
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+}
 
 
 
