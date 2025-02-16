@@ -478,20 +478,27 @@ main > div {
     padding-bottom: 10px;
     margin: 0 auto;
     align-items: center;
+    overflow-y: auto;
+    overscroll-behavior-inline: contain;
+    scroll-snap-type: inline mandatory;
+    scroll-snap-align: start;
 }
 .tabbed nav ul li a {
     font-size: clamp(20px, -0.875em + 8.333vw, 26px);
     font-weight: 500;
     transition: color .3s;
 }
-.tabbed nav ul li:not(.active) a {
+.tabbed nav ul li:not(.swiper-slide-thumb-active) a {
     color: var(--grey-color);
 }
 .tabbed nav ul li a:hover {
     color: var(--dark-color);
 }
-.tabbed nav ul li.active a {
+.tabbed nav ul li.swiper-slide-thumb-active a {
     border-bottom: 2px solid var(--dark-color);
+}
+.tabbed nav li {
+    width: fit-content!important;
 }
 .tabbed .button {
     text-align: center;
@@ -638,6 +645,127 @@ main > div {
 
 .product .colors .highheels1 { background-color: #e3cdb9;}
 .product .colors .highheels2 { background-color: #616161;}
+
+/*----------------------
+02. d. video   */
+.video-box {
+    position: relative;
+    height: 500px;
+    max-width: 900px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.video-box .attributes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--white-color);
+    cursor: pointer;
+}
+.video-box .attributes i {
+    font-size: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    border: 2px solid var(--white-color);
+    border-radius: 50%;
+    margin-bottom: 30px;
+}
+.video-box .attributes h3 {
+    font-size: clamp(26px, -0.875em + 8.333vw, 42px);
+    text-transform: uppercase;
+    font-weight: 700;
+}
+.video-box:hover img {
+    transform: scale(1.1);
+}
+
+/*----------------------
+02. e. Youtube Embed   */
+.youtube {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: var(--dark-color);
+    z-index: 1050;
+
+    visibility: hidden;
+    opacity: 0;
+}
+.youtube.active {
+    visibility: visible;
+    opacity: 1;
+}
+.youtube, .youtube :where(.wrap, .inner, iframe) {
+    width: 100%;
+    height: 100%;
+}
+.youtube .wrap {
+    position: relative;
+    overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+    max-height: 100%;
+}
+.youtube .inner {
+    position: absolute;
+    left: 0;
+    top: 0;
+    white-space: nowrap;
+}
+.youtube .item {
+    display: inline-block;
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+.youtube .item::before {
+    content: '';
+    display: inline-block;
+    height: 50%;
+    width: 1px;
+    margin-right: -1px;
+}
+.youtube .outer {
+    display: inline-block;
+    vertical-align: middle;
+    max-width: 850px;
+    max-height: 100%;
+    width: 100%;
+    padding: 0 5px;
+}
+.youtube .control {
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+    overflow: hidden;
+    position: relative;
+}
+.youtube iframe {
+    display: inline-block;
+    transform: scale3d(.5, .5, .5);
+    transition: transform .3s;
+    transform-origin: 50% 50%;
+}
+.youtube.active iframe {
+    transform: scale3d(1,1,1);
+}
+.youtube .item > a {
+    color: var(--white-color);
+    float: right;
+}
+
 
 @media only screen and (max-width: 576px) {
     .header-main .icons :where(li:nth-child(2), li:nth-child(3)) {

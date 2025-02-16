@@ -28,3 +28,20 @@ const submenu = document.querySelectorAll('.sub-trigger');
             this.classList.toggle('expand')
         }
     }
+ 
+
+// Tabbed 
+var tabbedNav = new Swiper('.tabs', {
+    slidesPerView: 1,
+    centeredSlides: true,
+    slidePerGroup: false,
+    spaceBetween: 20,
+})
+
+var theTab = new Swiper('.tabs-box', {
+    slidesPerView: 1,
+    autoHeight: true,
+    thumbs: {
+        swiper: tabbedNav
+    },
+}) 
