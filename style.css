@@ -493,6 +493,12 @@ main > div {
 .tabbed nav ul li.active a {
     border-bottom: 2px solid var(--dark-color);
 }
+.tabbed .button {
+    text-align: center;
+    margin: 30px 0 0;
+}
+
+
 
 
 /*-----------------
@@ -583,8 +589,55 @@ main > div {
     text-decoration: line-through;
     margin-right: 10px;
 }
+.product .colors {
+    display: flex;
+    gap: 10px;
+    margin: 8px 0 15px;
+}
+.product .colors a {
+    position: relative;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+}
+.product .colors a::before {
+    content: '';
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    left: 5px;
+    top: 5px;
+    transition: transform .3s;
+    transform: scale(0);
+}
+.product .colors a.active::before, 
+.product .colors a:hover::before {
+    background-color: var(--light-color);
+    transform: scale(1);
+    border: 1px solid var(--white-color);
+}
 
 
+
+
+
+/* Cores dos produtos */
+.product .colors .marron { background-color: #b53471;}
+.product .colors .gold { background-color: #ffc321;}
+.product .colors .bluejean1 { background-color: #22699b;}
+.product .colors .bluejean2 { background-color: #6f9fc1;}
+.product .colors .bluejean3 { background-color: #6f9fc1;}
+
+.product .colors .tosca { background-color: #67b2a7;}
+.product .colors .army { background-color: #859288;}
+.product .colors .orange { background-color: #d59000;}
+.product .colors .light { background-color: var(--light-color)}
+.product .colors .carmin { background-color: #9E483F;}
+
+
+.product .colors .highheels1 { background-color: #e3cdb9;}
+.product .colors .highheels2 { background-color: #616161;}
 
 @media only screen and (max-width: 576px) {
     .header-main .icons :where(li:nth-child(2), li:nth-child(3)) {
