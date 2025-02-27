@@ -472,7 +472,7 @@ main > div {
 .tabbed nav ul {
     display: flex;
     justify-content: space-between;
-    max-width: 446px;
+    max-width: 450px;
     width: auto;
     padding-bottom: 10px;
     margin: 0 auto;
@@ -843,7 +843,7 @@ footer .socials a:hover {
         gap: 15px;
     }
     .tabbed nav ul{
-        width:max-content !important;
+        width: max-content!important;
     }
 }
 
@@ -856,6 +856,7 @@ footer .socials a:hover {
         grid-column-start: 1;
         grid-column-end: 3;
     }
+   
 }
 
 
