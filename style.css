@@ -35,12 +35,11 @@ ul {list-style: none;}
 p{margin-bottom: 15px;}
 input::placeholder{font-family: 'Nunito', sans-serif;}
 
-h1, h2, h3, h4 {font-weight:500;line-height: normal;}
+h1,h2,h3,h4 {font-weight: 500;line-height: normal;}
 h1 {font-size: 2.5em;}
 h2 {font-size: 2em;}
 h3 {font-size: 1.5em;}
 h4 {font-size: 1em;}
-
 
 
 .container {
@@ -473,12 +472,13 @@ main > div {
 .tabbed nav ul {
     display: flex;
     justify-content: space-between;
-    max-width: 436px;
+    max-width: 446px;
     width: auto;
     padding-bottom: 10px;
     margin: 0 auto;
     align-items: center;
     overflow-y: auto;
+    overflow-x: hidden;
     overscroll-behavior-inline: contain;
     scroll-snap-type: inline mandatory;
     scroll-snap-align: start;
@@ -841,6 +841,9 @@ footer .socials a:hover {
     }
     .hero .wrap {
         gap: 15px;
+    }
+    .tabbed nav ul{
+        width:max-content !important;
     }
 }
 
