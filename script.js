@@ -32,7 +32,7 @@ const submenu = document.querySelectorAll('.sub-trigger');
 
 // Tabbed 
 var tabbedNav = new Swiper('.tabs', {
-    slidesPerView: 1,
+    slidesPerView: false,
     centeredSlides: true,
     slidePerGroup: false,
     spaceBetween: 20,

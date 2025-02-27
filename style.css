@@ -873,6 +873,9 @@ footer .socials a:hover {
     .hero .list:not(.big) {
         height: 320px;
     }
+    .tabbed nav ul {
+        overflow-x: hidden;
+    }
 }
 
 
