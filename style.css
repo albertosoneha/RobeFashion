@@ -20,6 +20,7 @@ body {
     line-height: 1.8;
     color: var(--dark-color);
     background-color: var(--white-color);
+    overflow-x: hidden;
 }
 a {
     text-decoration: none;
@@ -478,7 +479,6 @@ main > div {
     margin: 0 auto;
     align-items: center;
     overflow-y: auto;
-    overflow-x: hidden;
     overscroll-behavior-inline: contain;
     scroll-snap-type: inline mandatory;
     scroll-snap-align: start;
@@ -842,8 +842,8 @@ footer .socials a:hover {
     .hero .wrap {
         gap: 15px;
     }
-    .tabbed nav ul{
-        width: max-content!important;
+    .tabbed nav ul {
+        max-width: 100%;
     }
 }
 
@@ -954,6 +954,9 @@ footer .socials a:hover {
     }
     .megamenu .product {
         grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));
+    }
+    .tabbed nav ul {
+        overflow-x: hidden;
     }
     .inner-footer .wrap {
         grid-template-columns: 1fr 1fr 1fr 2fr;
